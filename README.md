@@ -36,3 +36,10 @@ php artisan migrate:rollback --path=/database/migrations/product
 
 php artisan migrate
 php artisan make:test StockTest
+
+
+
+# References:
+
+https://laravel.com/docs/5.8/migrations
+https://laravel.com/docs/5.8/testing
