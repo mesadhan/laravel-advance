@@ -21,10 +21,11 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 
 Route::group(['namespace' => 'Products', 'prefix' => 'products',], function (){
 
-    Route::resource('/stock', 'StockController');
     Route::group(['prefix' => 'stock',], function (){
+        Route::get('/getDBInfo', 'StockController@getDBInfo');
         Route::get('/acceptById/{id}', 'StockController@acceptById');
     });
+    Route::resource('/stock', 'StockController');       // must define below Route::group
 });
 
 

@@ -1,4 +1,9 @@
 
+GET http://localhost:8000/api/products/stock/getDBInfo
+Content-Type: application/json
+
+###
+
 GET http://localhost:8000/api/products/stock
 Content-Type: application/json
 

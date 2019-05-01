@@ -26,7 +26,7 @@ class StockController extends Controller
 
     public function create()
     {
-        return env('DB_DATABASE', database_path('database.sqlite'));
+
     }
 
 
@@ -34,7 +34,7 @@ class StockController extends Controller
     {
         $stock = Stock::create($request->all());
 
-        return $stock;
+        return response()->json($stock, 200);
     }
 
 
@@ -65,4 +65,10 @@ class StockController extends Controller
         //
         return $stockId;
     }
+
+    public function getDBInfo()
+    {
+        return env('DB_DATABASE', database_path('database.sqlite'));
+    }
+
 }
