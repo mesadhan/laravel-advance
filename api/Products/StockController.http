@@ -5,7 +5,7 @@ Content-Type: application/json
 ###
 
 
-GET http://localhost:8000/api/products/stock/acceptById/111
+GET http://localhost:8000/api/products/stock/acceptById/100
 Content-Type: application/json
 
 ###
