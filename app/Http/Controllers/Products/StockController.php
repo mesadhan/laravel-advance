@@ -26,13 +26,15 @@ class StockController extends Controller
 
     public function create()
     {
-        //
+        return env('DB_DATABASE', database_path('database.sqlite'));
     }
 
 
     public function store(Request $request)
     {
-        //
+        $stock = Stock::create($request->all());
+
+        return $stock;
     }
 
 

@@ -4,6 +4,22 @@ Content-Type: application/json
 
 ###
 
+GET http://localhost:8000/api/products/stock/create
+Content-Type: application/json
+
+###
+
+
+POST http://localhost:8000/api/products/stock
+Content-Type: application/json
+
+{
+  "name" : "Apple",
+  "price" : 200
+}
+
+###
+
 
 GET http://localhost:8000/api/products/stock/acceptById/100
 Content-Type: application/json
