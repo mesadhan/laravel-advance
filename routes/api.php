@@ -16,3 +16,18 @@ use Illuminate\Http\Request;
 Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
+
+
+
+Route::group(['namespace' => 'Products', 'prefix' => 'products',], function (){
+
+    Route::resource('/stock', 'StockController');
+    Route::group(['prefix' => 'stock',], function (){
+        Route::get('/acceptById/{id}', 'StockController@acceptById');
+    });
+});
+
+
+
+// https://laravel.com/docs/5.8/routing
+// https://laravel.com/docs/5.8/controllers
