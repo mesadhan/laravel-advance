@@ -9,7 +9,7 @@ use Illuminate\Foundation\Testing\RefreshDatabase;
 class ExampleTest extends TestCase
 {
     // to use memory database when run test, jus uncomment `phpunit.xml` configuration
-    use DatabaseMigrations;
+    // use DatabaseMigrations;
 
 
     public function testBasicTest()
