@@ -21,27 +21,33 @@
 
 # Create Model & Table Schema
 
-php artisan make:model Stock -m
-php artisan make:model Http/Models/Person -m
+> create controller, model, schema and factory base on need
 
-php artisan make:model Http/Models/Person -crm
-php artisan make:model Http/Models/Person -a
-
-
-php artisan migrate --path=/database/migrations/*
-php artisan migrate:rollback --path=/database/migrations/*
+    php artisan make:model Http/Models/Person -a
+    php artisan make:model Http/Models/Person -cmf
+    php artisan make:model Http/Models/Person -m
+    php artisan make:model Stock -m
 
 
-php artisan migrate --path=/database/migrations/products
-php artisan migrate:rollback --path=/database/migrations/products
+> Make migration on default or all sub-folders 
+
+    php artisan migrate
+    php artisan migrate:rollback
+    php artisan migrate --path=/database/migrations/*
+    php artisan migrate:rollback --path=/database/migrations/*
+
+
+> Make migration on default or specific sub-folder 
+
+    php artisan migrate
+    php artisan migrate:rollback
+    php artisan migrate --path=/database/migrations/products
+    php artisan migrate:rollback --path=/database/migrations/products
 
 
 
-php artisan migrate
+
 php artisan make:test StockTest
-
-
-
 php artisan make:factory PostFactory
 
 
