@@ -14,12 +14,12 @@
 
 # Create Local Database and connect it to PhpStorm
 
-- create a normal text file with extension `.sqlite` like `database.sqlite`
+- create a normal text file with extension `.sqlite` like `database/database.sqlite`
 - then, connect it to select `Add New or Plus Sign` then choose `Data source from path` in PhpStorm Database Section through `database.sqlite` absolute path.
 
 
 
-# Create Model & Table Schema
+# Create Controller, Model, Schema and Factory
 
 > create controller, model, schema and factory base on need
 
@@ -53,15 +53,6 @@
     php artisan make:factory PersonFactory
 
 
-# References:
-
-https://laravel.com/docs/5.8/migrations
-https://laravel.com/docs/5.8/testing
-
-
-
-<a href="{{ route('actBook', $room->id, serialize($array)) }}" class="btn btn-default">About</a>
-
 
 
 # Learn Laravel Reflection API
@@ -94,3 +85,14 @@ class StockController extends Controller
     }
 }
 ```
+
+
+# References:
+
+https://laravel.com/docs/5.8/migrations
+https://laravel.com/docs/5.8/testing
+
+
+
+<a href="{{ route('actBook', $room->id, serialize($array)) }}" class="btn btn-default">About</a>
+
