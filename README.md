@@ -46,9 +46,11 @@
 
 
 
+> Make Test and Factory for test
 
-php artisan make:test StockTest
-php artisan make:factory PostFactory
+    php artisan make:test StockTest
+    php artisan make:test PersonTest --unit
+    php artisan make:factory PersonFactory
 
 
 # References:
@@ -58,7 +60,7 @@ https://laravel.com/docs/5.8/testing
 
 
 
-<a href="{{ route('actBook', $room->id, serialize($array)) }}" class="btn btn-default">დაჯავშნა</a>
+<a href="{{ route('actBook', $room->id, serialize($array)) }}" class="btn btn-default">About</a>
 
 
 
