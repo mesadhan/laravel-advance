@@ -91,6 +91,7 @@ class StockController extends Controller
 
 https://laravel.com/docs/5.8/migrations
 https://laravel.com/docs/5.8/testing
+https://laravel.com/docs/5.8/responses
 
 https://www.youtube.com/watch?v=EPL9sM3nH6w
 
