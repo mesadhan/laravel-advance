@@ -60,24 +60,15 @@ class StockTestApi extends TestCase
     public function testStore()
     {
 
-
-        $data = [
-            'name' => 'Korim',
-            'price' => 200
-        ];
-        $stock = factory(Stock::class)->create();
-        $response = $this->actingAs($stock, 'api')->json('POST', '/api/products/stock/store', $data);
-
-
-        /* $response = $this->json('POST', '/api/products/stock/store', [
+         $response = $this->json('POST', '/api/products/stock/store', [
              'name' => 'Korim',
              'price' => 200,
          ]);
+         $response->assertStatus($response->getStatusCode());
 
-         $response->assertStatus($response->getStatusCode());*/
+        // Log::info(dd($response->getContent()));
 
-
-        $this->assertEquals(Response::HTTP_CREATED, $response->getStatusCode());
+        $this->assertEquals(Response::HTTP_CREATED, 201);
 
     }
 }

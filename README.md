@@ -53,6 +53,10 @@
     php artisan make:factory PersonFactory
 
 
+> User DB Seed with mock data
+
+    php artisan make:seeder StockTableSeeder
+    php artisan db:seed
 
 
 # Learn Laravel Reflection API

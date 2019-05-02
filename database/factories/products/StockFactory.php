@@ -23,11 +23,13 @@ $factory->define(Stock::class, function (Faker $faker) {
     ];
 
 
+
     /*return [
+        'name' => $faker->sentence,
+        'details' => $faker->paragraph,
         'title' => $faker->sentence(5),
         'description' => $faker->text(),
         'user_id' => factory('App\User')->create()->id,
     ]; */
-
 
 });
