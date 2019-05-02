@@ -15,6 +15,8 @@ class StockApiTest extends TestCase
     public function testIndex()
     {
         //$response = $this->get('/');
+        Stock::truncate();
+        factory(Stock::class)->create();
 
         $response = $this->json('GET', '/api/products/stock');
 
@@ -45,20 +47,6 @@ class StockApiTest extends TestCase
         $this->assertNotEmpty($response->getContent());
     }
 
-    public function testCreate()
-    {
-        Stock::truncate();
-        $response = $this->json('GET', '/api/products/stock/create');
-        $response->assertStatus($response->getStatusCode());
-
-        $response->assertJson([
-            'status' => 'success',
-            'message' => 'Successfully Created',
-        ]);
-
-        $this->assertEquals(Response::HTTP_CREATED, $response->getStatusCode());
-
-    }
 
     public function testStore()
     {
@@ -81,14 +69,25 @@ class StockApiTest extends TestCase
     }
 
 
-    public function testEdit()
+    public function testUpdate()
     {
+        $id = 1;
         $stock = [
-            'id' => 1,
             'name' => 'New-Banana',
             'price' => 200,
         ];
-        $response = $this->json('GET', "api/products/stock/1/edit", $stock);
+        $response = $this->json('PUT', "api/products/stock/update/". $id, $stock);
         $this->assertEquals(Response::HTTP_OK, $response->getStatusCode());
+    }
+
+    public function testOptions()
+    {
+        /*$this->call('OPTIONS', route('api.items.index'))
+            ->assertSuccessful()
+            ->assertJson([
+                'meta'
+            ]);*/
+
+        $this->assertTrue(true);
     }
 }

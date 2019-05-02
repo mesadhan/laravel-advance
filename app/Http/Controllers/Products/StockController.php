@@ -26,22 +26,6 @@ class StockController extends Controller
     }
 
 
-    public function create()
-    {
-        $stock = Stock::create([
-            'name' => 'Banana',
-            'price' => 300
-        ]);
-        $response = [
-            'status' => 'success',
-            'message' => 'Successfully Created',
-            'data' => $stock,
-        ];
-
-        return response()->json($response, Response::HTTP_CREATED);
-    }
-
-
     public function store(Request $request)
     {
         $stock = Stock::create($request->all());
@@ -56,15 +40,14 @@ class StockController extends Controller
         return response()->json($stock, Response::HTTP_OK);
     }
 
-    public function update(Request $request, Stock $stock)
-    {
-        $stock = Stock::where('id', $stock->id)
-            ->update([
-                'name' => $stock->name,
-                'price' => $stock->price
-            ]);
 
-        // store $request data
+    public function update(Request $request, $id)
+    {
+
+        $stock = Stock::where('id', $id)->update([
+            'name' => $request['name'],
+            'price' => $request['price']
+        ]);
 
         $response = [
             'status' => 'success',
@@ -74,6 +57,7 @@ class StockController extends Controller
 
         return response()->json($response, Response::HTTP_OK);
     }
+
 
     public function destroy(Stock $stock)
     {

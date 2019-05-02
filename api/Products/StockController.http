@@ -25,11 +25,17 @@ Content-Type: application/json
 
 ###
 
-
-GET http://localhost:8000/api/products/stock/1/edit
+PUT http://localhost:8000/api/products/stock/update/1
 Content-Type: application/json
 
+{
+  "name" : "Appleddd",
+  "price" : 200
+}
+
 ###
+
+
 
 GET http://localhost:8000/api/products/stock/acceptById/100
 Content-Type: application/json

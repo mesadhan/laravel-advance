@@ -23,6 +23,7 @@ Route::group(['namespace' => 'products', 'prefix' => 'products',], function (){
 
     Route::group(['prefix' => 'stock',], function (){
         Route::apiResource('/', 'StockController');
+        Route::put('/update/{id}', 'StockController@update');
         Route::get('/getDBInfo', 'StockController@getDBInfo');
         Route::get('/acceptById/{id}', 'StockController@acceptById');
     });

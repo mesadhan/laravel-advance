@@ -59,6 +59,9 @@
     php artisan db:seed
 
 
+
+php artisan make:controller PhotoController --api
+
 # Learn Laravel Reflection API
 
 
