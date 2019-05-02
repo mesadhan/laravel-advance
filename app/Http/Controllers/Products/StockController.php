@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Http\Models\Products\Stock;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
+use Illuminate\Support\Facades\Log;
 
 class StockController extends Controller
 {
@@ -114,6 +115,7 @@ class StockController extends Controller
         $value = $this->$methodName();      // call dynamically testMethod() function
         return $value;
     }
+
     public function testMethod()
     {
         return 'Hello! From Test Method';
