@@ -47,6 +47,7 @@ class StockApiTest extends TestCase
 
     public function testCreate()
     {
+        Stock::truncate();
         $response = $this->json('GET', '/api/products/stock/create');
         $response->assertStatus($response->getStatusCode());
 
@@ -61,7 +62,6 @@ class StockApiTest extends TestCase
 
     public function testStore()
     {
-
         $stock = [
             'name' => 'Sadhan From - testStore',
             'price' => 200,
@@ -69,5 +69,26 @@ class StockApiTest extends TestCase
 
         $response = $this->json('POST', 'api/products/stock', $stock);
         $this->assertEquals(Response::HTTP_CREATED, $response->getStatusCode());
+    }
+
+    public function testShow()
+    {
+        $stock = [
+            'price' => 200,
+        ];
+        $response = $this->json('GET', 'api/products/stock', $stock);
+        $this->assertEquals(Response::HTTP_OK, $response->getStatusCode());
+    }
+
+
+    public function testEdit()
+    {
+        $stock = [
+            'id' => 1,
+            'name' => 'New-Banana',
+            'price' => 200,
+        ];
+        $response = $this->json('GET', "api/products/stock/1/edit", $stock);
+        $this->assertEquals(Response::HTTP_OK, $response->getStatusCode());
     }
 }

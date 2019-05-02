@@ -22,7 +22,7 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 Route::group(['namespace' => 'products', 'prefix' => 'products',], function (){
 
     Route::group(['prefix' => 'stock',], function (){
-        Route::resource('/', 'StockController');
+        Route::apiResource('/', 'StockController');
         Route::get('/getDBInfo', 'StockController@getDBInfo');
         Route::get('/acceptById/{id}', 'StockController@acceptById');
     });

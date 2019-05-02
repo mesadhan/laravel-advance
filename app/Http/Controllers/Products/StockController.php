@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Products;
 
 use App\Http\Controllers\Controller;
 use App\Http\Models\Products\Stock;
+use App\User;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
 use Illuminate\Support\Facades\Log;
@@ -54,18 +55,6 @@ class StockController extends Controller
         $stock = Stock::where('id', $stock->id)->get;
         return response()->json($stock, Response::HTTP_OK);
     }
-
-
-    public function edit(Stock $stock)
-    {
-        $stock = Stock::where('id', $stock->id)
-            ->update([
-                'name' => $stock->name,
-                'price' => $stock->price
-            ]);
-        return response()->json($stock, Response::HTTP_OK);
-    }
-
 
     public function update(Request $request, Stock $stock)
     {
