@@ -16,8 +16,9 @@ class StockController extends Controller
     {
         $stock = Stock::all();
         $response = [
+            'status' => 'success',
             'message' => 'Successfully Data Fetch',
-            'result' => $stock,
+            'data' => $stock,
         ];
         return response()->json($response, Response::HTTP_OK);
     }
@@ -30,8 +31,9 @@ class StockController extends Controller
             'price' => 300
         ]);
         $response = [
+            'status' => 'success',
             'message' => 'Successfully Created',
-            'result' => $stock,
+            'data' => $stock,
         ];
 
         return response()->json($response, Response::HTTP_CREATED);
@@ -75,8 +77,9 @@ class StockController extends Controller
         // store $request data
 
         $response = [
+            'status' => 'success',
             'message' => 'Successfully Updated',
-            'result' => $stock,
+            'data' => $stock,
         ];
 
         return response()->json($response, Response::HTTP_OK);
@@ -91,8 +94,9 @@ class StockController extends Controller
             ]);
 
         $response = [
+            'status' => 'success',
             'message' => 'Successfully Deleted',
-            'result' => $stock,
+            'data' => $stock,
         ];
 
         return response()->json($response, Response::HTTP_OK);
