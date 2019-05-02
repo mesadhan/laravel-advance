@@ -92,6 +92,7 @@ class StockController extends Controller
 https://laravel.com/docs/5.8/migrations
 https://laravel.com/docs/5.8/testing
 
+https://www.youtube.com/watch?v=EPL9sM3nH6w
 
 
 <a href="{{ route('actBook', $room->id, serialize($array)) }}" class="btn btn-default">About</a>
