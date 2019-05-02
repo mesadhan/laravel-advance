@@ -33,11 +33,11 @@ class StockTestApi extends TestCase
             // error if server not match any attributes
         ]);
 
-        //$result = $response->getContent();
-        //Log::info( json_decode($result)->data[0]->price );
+        //$result = json_decode($response->getContent());
+        //Log::info( $result->data[0]->price );
         //$this->assertEquals(200 , 23);
 
-        $this->assertNotNull($response->getContent());
+        //$this->assertNull($response->getContent());
         $this->assertNotEmpty($response->getContent());
     }
 }
