@@ -3,11 +3,13 @@
 namespace Tests\Feature\Products;
 
 use App\Http\Models\Products\Stock;
+use App\User;
 use Illuminate\Http\Response;
 use Illuminate\Support\Facades\Log;
+use Illuminate\Support\Str;
 use Tests\TestCase;
 
-class StockTestApi extends TestCase
+class StockApiTest extends TestCase
 {
 
     public function testIndex()
@@ -60,15 +62,12 @@ class StockTestApi extends TestCase
     public function testStore()
     {
 
-         $response = $this->json('POST', '/api/products/stock/store', [
-             'name' => 'Korim',
-             'price' => 200,
-         ]);
-         $response->assertStatus($response->getStatusCode());
+        $stock = [
+            'name' => 'Sadhan From - testStore',
+            'price' => 200,
+        ];
 
-        // Log::info(dd($response->getContent()));
-
-        $this->assertEquals(Response::HTTP_CREATED, 201);
-
+        $response = $this->json('POST', 'api/products/stock', $stock);
+        $this->assertEquals(Response::HTTP_CREATED, $response->getStatusCode());
     }
 }
