@@ -1,6 +1,6 @@
 <?php
 
-namespace Tests\Feature;
+namespace Tests\Unit;
 
 use App\Http\Models\Products\Stock;
 use Tests\TestCase;
