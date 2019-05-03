@@ -2,14 +2,12 @@
 
 
 use App\Http\Models\Products\Category;
-use App\Http\Models\Products\Product;
-use App\Http\Models\Products\Stock;
 use Faker\Factory;
 use Illuminate\Database\Seeder;
 use Illuminate\Http\UploadedFile;
 use Illuminate\Support\Facades\Config;
 
-class ProductTableSeeder extends Seeder
+class CategoryTableSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -18,13 +16,8 @@ class ProductTableSeeder extends Seeder
      */
     public function run()
     {
-
-        Product::truncate();
-
-        for ($i = 0; $i < 5; $i++) {
-            factory(Product::class)->create();
-
-        }
+        Category::truncate();
+        factory(Category::class)->create();
 
     }
 

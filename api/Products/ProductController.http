@@ -1,0 +1,6 @@
+
+### index request
+GET http://localhost:8000/api/products/product
+Content-Type: application/json
+
+###
