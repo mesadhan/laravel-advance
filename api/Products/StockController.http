@@ -1,44 +1,43 @@
-
-GET http://localhost:8000/api/products/stock/getDBInfo
-Content-Type: application/json
-
-###
-
+### index request
 GET http://localhost:8000/api/products/stock
 Content-Type: application/json
 
-###
 
-GET http://localhost:8000/api/products/stock/create
-Content-Type: application/json
-
-###
-
-
+### store request
 POST http://localhost:8000/api/products/stock
 Content-Type: application/json
 
 {
-  "name" : "Apple",
+  "name" : "Apple Store",
   "price" : 200
 }
 
-###
+### show request
+GET http://localhost:8000/api/products/stock/1
+Content-Type: application/json
 
-PUT http://localhost:8000/api/products/stock/update/1
+
+### update request
+PUT http://localhost:8000/api/products/stock/1
 Content-Type: application/json
 
 {
-  "name" : "Appleddd",
+  "name" : "Apple Updated",
   "price" : 200
 }
 
-###
+### delete request
+DELETE http://localhost:8000/api/products/stock/1
+Content-Type: application/json
 
 
 
-GET http://localhost:8000/api/products/stock/acceptById/100
+### ............... Optional Request
+GET http://localhost:8000/api/products/stock/get-db-info
 Content-Type: application/json
 
 ###
+GET http://localhost:8000/api/products/stock/accept-by-id/1
+Content-Type: application/json
 
+###

@@ -25,7 +25,6 @@ class StockController extends Controller
         return response()->json($response, Response::HTTP_OK);
     }
 
-
     public function store(Request $request)
     {
         $stock = Stock::create($request->all());
@@ -33,13 +32,16 @@ class StockController extends Controller
         return response()->json($stock, Response::HTTP_CREATED);
     }
 
-
-    public function show(Stock $stock)
+    public function show($id)
     {
-        $stock = Stock::where('id', $stock->id)->get;
-        return response()->json($stock, Response::HTTP_OK);
+        $stock = Stock::where('id', $id)->get();
+        $response = [
+            'status' => 'success',
+            'message' => 'Successfully Show',
+            'data' => $stock,
+        ];
+        return response()->json($response, Response::HTTP_OK);
     }
-
 
     public function update(Request $request, $id)
     {
@@ -58,15 +60,9 @@ class StockController extends Controller
         return response()->json($response, Response::HTTP_OK);
     }
 
-
-    public function destroy(Stock $stock)
+    public function delete($id)
     {
-        $stock = Stock::where('id', $stock->id)
-            ->update([
-                'name' => $stock->name,
-                'price' => $stock->price
-            ]);
-
+        $stock = Stock::where('id', $id)->delete();
         $response = [
             'status' => 'success',
             'message' => 'Successfully Deleted',

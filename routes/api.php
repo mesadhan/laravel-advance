@@ -22,10 +22,15 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 Route::group(['namespace' => 'products', 'prefix' => 'products',], function (){
 
     Route::group(['prefix' => 'stock',], function (){
-        Route::apiResource('/', 'StockController');
-        Route::put('/update/{id}', 'StockController@update');
-        Route::get('/getDBInfo', 'StockController@getDBInfo');
-        Route::get('/acceptById/{id}', 'StockController@acceptById');
+
+        Route::get('/', 'StockController@index');
+        Route::post('/', 'StockController@store');
+        Route::get('/{id}', 'StockController@show');
+        Route::put('/{id}', 'StockController@update');
+        Route::delete('/{id}', 'StockController@delete');
+
+        Route::get('/get-db-info', 'StockController@getDBInfo');
+        Route::get('/accept-by-id/{id}', 'StockController@acceptById');
     });
 });
 

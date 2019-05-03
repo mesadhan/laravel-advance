@@ -81,6 +81,15 @@ class StockTest extends TestCase
         $this->assertEquals(Response::HTTP_OK, $response->getStatusCode());
     }
 
+    public function testDestroy()
+    {
+        $stock = [
+            'id' => 1,
+        ];
+        $response = $this->json('DELETE', 'api/products/stock', $stock);
+        $this->assertEquals(Response::HTTP_OK, $response->getStatusCode());
+    }
+
     public function testOptions()
     {
         /*$this->call('OPTIONS', route('api.items.index'))
