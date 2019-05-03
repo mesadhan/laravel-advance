@@ -1,6 +1,7 @@
 <?php
 
 namespace Tests\Feature;
+
 namespace Tests\Feature\Products;
 
 use App\Http\Models\Products\Stock;
@@ -48,11 +49,10 @@ class StockTest extends TestCase
         $this->assertNotEmpty($response->getContent());
     }
 
-
     public function testStore()
     {
         $stock = [
-            'name' => 'Sadhan From - testStore',
+            'name' => 'Apple Store - by testStore',
             'price' => 200,
         ];
 
@@ -62,31 +62,26 @@ class StockTest extends TestCase
 
     public function testShow()
     {
-        $stock = [
-            'price' => 200,
-        ];
-        $response = $this->json('GET', 'api/products/stock', $stock);
+        $stockId = 1;
+        $response = $this->json('GET', 'api/products/stock/'. $stockId);
         $this->assertEquals(Response::HTTP_OK, $response->getStatusCode());
     }
-
 
     public function testUpdate()
     {
-        $id = 1;
+        $stockId = 1;
         $stock = [
-            'name' => 'New-Banana',
+            'name' => 'Apple Updated - by testUpdate',
             'price' => 200,
         ];
-        $response = $this->json('PUT', "api/products/stock/update/". $id, $stock);
+        $response = $this->json('PUT', "api/products/stock/". $stockId, $stock);
         $this->assertEquals(Response::HTTP_OK, $response->getStatusCode());
     }
 
-    public function testDestroy()
+    public function testDelete()
     {
-        $stock = [
-            'id' => 1,
-        ];
-        $response = $this->json('DELETE', 'api/products/stock', $stock);
+        $stockId = 1;
+        $response = $this->json('DELETE', 'api/products/stock/'. $stockId);
         $this->assertEquals(Response::HTTP_OK, $response->getStatusCode());
     }
 
