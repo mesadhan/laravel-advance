@@ -27,6 +27,7 @@
     php artisan make:model Http/Models/Person -cmf
     php artisan make:model Http/Models/Person -m
     php artisan make:model Stock -m
+    php artisan make:controller PhotoController --api
 
 
 > Make migration on default or all sub-folders 
@@ -60,7 +61,14 @@
 
 
 
-php artisan make:controller PhotoController --api
+## RUN phpunit Test using command lines
+    
+    $ vendor\bin\phpunit
+    $ vendor\bin\phpunit --configuration phpunit.xml
+    $ vendor\bin\phpunit --filter testBasicTest ./tests/Unit/ExampleTest
+    $ vendor\bin\phpunit --filter ExampleTest
+
+
 
 # Learn Laravel Reflection API
 

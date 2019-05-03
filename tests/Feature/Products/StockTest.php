@@ -1,5 +1,6 @@
 <?php
 
+namespace Tests\Feature;
 namespace Tests\Feature\Products;
 
 use App\Http\Models\Products\Stock;
@@ -9,7 +10,7 @@ use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Str;
 use Tests\TestCase;
 
-class StockApiTest extends TestCase
+class StockTest extends TestCase
 {
 
     public function testIndex()
