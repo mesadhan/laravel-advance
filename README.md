@@ -36,6 +36,7 @@
     php artisan migrate
     php artisan migrate:rollback
     php artisan migrate --path=/database/migrations/*
+    php artisan migrate:refresh --path=/database/migrations/*
     php artisan migrate:rollback --path=/database/migrations/*
 
 
@@ -44,6 +45,7 @@
     php artisan migrate
     php artisan migrate:rollback
     php artisan migrate --path=/database/migrations/products
+    php artisan migrate:refresh --path=/database/migrations/products
     php artisan migrate:rollback --path=/database/migrations/products
 
 
@@ -55,9 +57,9 @@
     php artisan make:factory PersonFactory
 
 
-> User DB Seed with mock data
+> User DB Seed with mock data, seeder file must create using command
 
-    php artisan make:seeder StockTableSeeder
+    php artisan make:seeder products/StockTableSeeder
     php artisan db:seed
 
 

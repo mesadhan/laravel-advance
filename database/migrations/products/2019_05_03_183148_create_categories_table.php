@@ -20,6 +20,9 @@ class CreateCategoriesTable extends Migration
             $table->string('title');
             $table->string('photo')->nullable();
             $table->integer('status');
+
+            $table->charset = 'utf8';
+            $table->collation = 'utf8_unicode_ci';
             $table->timestamps();
         });
     }
