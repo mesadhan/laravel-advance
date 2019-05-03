@@ -28,6 +28,7 @@
     php artisan make:model Http/Models/Person -m
     php artisan make:model Stock -m
     php artisan make:controller PhotoController --api
+    php artisan make:migration create_users_table
 
 
 > Make migration on default or all sub-folders 
