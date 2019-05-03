@@ -27,6 +27,7 @@
     php artisan make:model Http/Models/Person -cmf
     php artisan make:model Http/Models/Person -m
     php artisan make:model Stock -m
+    php artisan make:controller PhotoController --api
 
 
 > Make migration on default or all sub-folders 
@@ -52,6 +53,20 @@
     php artisan make:test PersonTest --unit
     php artisan make:factory PersonFactory
 
+
+> User DB Seed with mock data
+
+    php artisan make:seeder StockTableSeeder
+    php artisan db:seed
+
+
+
+## RUN phpunit Test using command lines
+    
+    $ vendor\bin\phpunit
+    $ vendor\bin\phpunit --configuration phpunit.xml
+    $ vendor\bin\phpunit --filter testBasicTest ./tests/Unit/ExampleTest
+    $ vendor\bin\phpunit --filter ExampleTest
 
 
 
@@ -91,6 +106,7 @@ class StockController extends Controller
 
 https://laravel.com/docs/5.8/migrations
 https://laravel.com/docs/5.8/testing
+https://laravel.com/docs/5.8/responses
 
 https://www.youtube.com/watch?v=EPL9sM3nH6w
 

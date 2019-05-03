@@ -4,9 +4,10 @@ namespace App\Http\Controllers\Products;
 
 use App\Http\Controllers\Controller;
 use App\Http\Models\Products\Stock;
-use Exception;
+use App\User;
 use Illuminate\Http\Request;
-use ReflectionClass;
+use Illuminate\Http\Response;
+use Illuminate\Support\Facades\Log;
 
 class StockController extends Controller
 {
@@ -15,60 +16,78 @@ class StockController extends Controller
 
     public function index()
     {
-        $methodName = 'testMethod';
-        $value = $this->$methodName();      // call dynamiclly testMethod() function
-        return $value;
+        $stock = Stock::all();
+        $response = [
+            'status' => 'success',
+            'message' => 'Successfully Data Fetch',
+            'data' => $stock,
+        ];
+        return response()->json($response, Response::HTTP_OK);
     }
-
-    public function testMethod(){
-        return 'Hello! From Test Method';
-    }
-
-    public function create()
-    {
-
-    }
-
 
     public function store(Request $request)
     {
         $stock = Stock::create($request->all());
 
-        return response()->json($stock, 200);
+        return response()->json($stock, Response::HTTP_CREATED);
     }
 
-
-    public function show(Stock $stock)
+    public function show($id)
     {
-        //
+        $stock = Stock::where('id', $id)->get();
+        $response = [
+            'status' => 'success',
+            'message' => 'Successfully Show',
+            'data' => $stock,
+        ];
+        return response()->json($response, Response::HTTP_OK);
     }
 
-
-    public function edit(Stock $stock)
+    public function update(Request $request, $id)
     {
-        //
+
+        $stock = Stock::where('id', $id)->update([
+            'name' => $request['name'],
+            'price' => $request['price']
+        ]);
+
+        $response = [
+            'status' => 'success',
+            'message' => 'Successfully Updated',
+            'data' => $stock,
+        ];
+
+        return response()->json($response, Response::HTTP_OK);
     }
 
-
-    public function update(Request $request, Stock $stock)
+    public function delete($id)
     {
-        //
-    }
+        $stock = Stock::where('id', $id)->delete();
+        $response = [
+            'status' => 'success',
+            'message' => 'Successfully Deleted',
+            'data' => $stock,
+        ];
 
-    public function destroy(Stock $stock)
-    {
-        //
-    }
-
-    public function acceptById($stockId)
-    {
-        //
-        return $stockId;
+        return response()->json($response, Response::HTTP_OK);
     }
 
     public function getDBInfo()
     {
         return env('DB_DATABASE', database_path('database.sqlite'));
+    }
+
+    // reflection example
+    public function acceptById($stockId)
+    {
+        $methodName = 'testMethod';
+        $value = $this->$methodName();      // call dynamically testMethod() function
+        return $value;
+    }
+
+    public function testMethod()
+    {
+        return 'Hello! From Test Method';
     }
 
 }
