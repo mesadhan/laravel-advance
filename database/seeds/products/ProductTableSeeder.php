@@ -20,6 +20,7 @@ class ProductTableSeeder extends Seeder
     {
 
         Product::truncate();
+        Category::truncate();
 
         for ($i = 0; $i < 5; $i++) {
             factory(Product::class)->create();
