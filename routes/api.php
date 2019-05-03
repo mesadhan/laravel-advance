@@ -32,6 +32,15 @@ Route::group(['namespace' => 'products', 'prefix' => 'products',], function (){
         Route::get('/get-db-info', 'StockController@getDBInfo');
         Route::get('/accept-by-id/{id}', 'StockController@acceptById');
     });
+
+
+});
+
+Route::group(['namespace' => 'products', 'prefix' => 'products',], function () {
+
+    Route::group(['prefix' => 'product',], function (){
+        Route::get('/', 'ProductController@index');
+    });
 });
 
 

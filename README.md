@@ -23,11 +23,11 @@
 
 > create controller, model, schema and factory base on need
 
-    php artisan make:model Http/Models/Person -a
-    php artisan make:model Http/Models/Person -cmf
-    php artisan make:model Http/Models/Person -m
+    php artisan make:model Http/Models/Products -a
+    php artisan make:model Http/Models/Products -cmf
+    php artisan make:model Http/Models/Products -m
     php artisan make:model Stock -m
-    php artisan make:controller PhotoController --api
+    php artisan make:controller ProductController --api
     php artisan make:migration create_users_table
 
 

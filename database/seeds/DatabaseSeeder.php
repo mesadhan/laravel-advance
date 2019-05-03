@@ -1,6 +1,6 @@
 <?php
 
-use App\Http\Models\Products\Stock;
+
 
 use Illuminate\Database\Seeder;
 
@@ -13,7 +13,9 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
+        //$this->call(CategoryTableSeeder::class);
         $this->call(UserTableSeeder::class);
         $this->call(StockTableSeeder::class);
+        $this->call(ProductTableSeeder::class);
     }
 }
