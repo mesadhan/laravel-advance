@@ -7,7 +7,7 @@ php:
 before_script:
   - cp .env.testing .env
   - composer self-update
-  - composer install
+  - composer install --prefer-source --no-interaction
   - php artisan key:generate
 
 script:
