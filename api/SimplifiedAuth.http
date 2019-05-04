@@ -23,18 +23,18 @@ Content-Type: application/json
 ### request for access resource
 GET http://localhost:8000/api/user
 Content-Type: application/json
-Authorization: Bearer 0xDTeLiXxc3HnunJ1RutDDLI8TRWJ8cQUMSH27s9dyAlgbBM1CKMqQ2jcLNy
+Authorization: Bearer it6rttbAcnKylJKG0Gvvl0bVSZ1vXsY2xZjLgkAcUDeQIZL4oUJlOVPTvpJs
 
 
 ### getResources using token through api request
-GET http://localhost:8000/api/resources/getResources
+GET http://localhost:8000/api/getResources
 Content-Type: application/json
-Authorization: Bearer 0xDTeLiXxc3HnunJ1RutDDLI8TRWJ8cQUMSH27s9dyAlgbBM1CKMqQ2jcLNy
+Authorization: Bearer i0KGZm3E9520aaiB1puGGvxPa89LmeYu5SFadybVuwtGqUbLL53hvtZiYul0
 
 
 ### logout using token through api request
 POST http://localhost:8000/api/logout
 Content-Type: application/json
-Authorization: Bearer 0xDTeLiXxc3HnunJ1RutDDLI8TRWJ8cQUMSH27s9dyAlgbBM1CKMqQ2jcLNy
+Authorization: Bearer it6rttbAcnKylJKG0Gvvl0bVSZ1vXsY2xZjLgkAcUDeQIZL4oUJlOVPTvpJs
 ###
 
