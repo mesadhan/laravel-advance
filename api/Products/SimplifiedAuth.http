@@ -1,0 +1,40 @@
+
+### create new user through api request
+POST http://localhost:8000/api/register
+Content-Type: application/json
+
+{
+  "name": "Sadhan",
+  "email": "sadhan@laravel.com",
+  "password": "sadhan123456",
+  "password_confirmation": "sadhan123456"
+}
+
+### login user using credential through api request
+POST http://localhost:8000/api/login
+Content-Type: application/json
+
+{
+  "email": "sadhan@laravel.com",
+  "password": "sadhan123456"
+}
+
+
+### request for access resource
+GET http://localhost:8000/api/user
+Content-Type: application/json
+Authorization: Bearer 0xDTeLiXxc3HnunJ1RutDDLI8TRWJ8cQUMSH27s9dyAlgbBM1CKMqQ2jcLNy
+
+
+### getResources using token through api request
+GET http://localhost:8000/api/resources/getResources
+Content-Type: application/json
+Authorization: Bearer 0xDTeLiXxc3HnunJ1RutDDLI8TRWJ8cQUMSH27s9dyAlgbBM1CKMqQ2jcLNy
+
+
+### logout using token through api request
+POST http://localhost:8000/api/logout
+Content-Type: application/json
+Authorization: Bearer 0xDTeLiXxc3HnunJ1RutDDLI8TRWJ8cQUMSH27s9dyAlgbBM1CKMqQ2jcLNy
+###
+
