@@ -9,6 +9,7 @@ use Faker\Factory;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
 use Illuminate\Support\Facades\Config;
+use Illuminate\Support\Facades\File;
 
 class CategoryController extends Controller
 {
@@ -65,16 +66,17 @@ class CategoryController extends Controller
         return response()->json($response, Response::HTTP_OK);
     }
 
-
     public function delete($id)
     {
+        $category = Category::where('id', $id)->first();
+        File::delete($category['photo']);
+
         $category = Category::where('id', $id)->delete();
         $response = [
             'status' => 'success',
-            'message' => 'Successfully Deleted',
+            'message' => 'Successfully deleted',
             'data' => $category,
         ];
-
         return response()->json($response, Response::HTTP_OK);
     }
 

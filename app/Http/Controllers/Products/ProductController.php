@@ -89,7 +89,6 @@ class ProductController extends Controller
         return response()->json($response, Response::HTTP_OK);
     }
 
-
     public function delete($id)
     {
         $product = Product::where('id', $id)->first();
@@ -103,7 +102,6 @@ class ProductController extends Controller
         ];
         return response()->json($response, Response::HTTP_OK);
     }
-
 
     public function productWiseCategory()
     {
@@ -144,4 +142,6 @@ class ProductController extends Controller
         ];
         return response()->json($response, Response::HTTP_OK);
     }
+
+
 }
