@@ -3,4 +3,22 @@
 GET http://localhost:8000/api/products/product
 Content-Type: application/json
 
+
+
+### categoryWiseProducts request
+GET http://localhost:8000/api/products/category/categoryWiseProducts
+Content-Type: application/json
+
+
+### categoryByProducts request
+GET http://localhost:8000/api/products/category/categoryByProducts/1
+Content-Type: application/json
+
+
+
+### categoryByCategoryIdAndProductId request
+GET http://localhost:8000/api/products/category/categoryByCategoryIdAndProductId/1/7
+Content-Type: application/json
+
 ###
+

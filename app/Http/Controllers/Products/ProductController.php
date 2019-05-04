@@ -104,16 +104,6 @@ class ProductController extends Controller
         return response()->json($response, Response::HTTP_OK);
     }
 
-    public function categoryWiseProducts()
-    {
-        $product = Category::with('products')->get();
-        $response = [
-            'status' => 'success',
-            'message' => 'Successfully CategoryWiseProducts',
-            'data' => $product,
-        ];
-        return response()->json($response, Response::HTTP_OK);
-    }
 
     public function productWiseCategory()
     {
@@ -122,6 +112,35 @@ class ProductController extends Controller
             'status' => 'success',
             'message' => 'Successfully productWiseCategory',
             'data' => $product,
+        ];
+        return response()->json($response, Response::HTTP_OK);
+    }
+
+    public function productByCategory($productId)
+    {
+        $product = Product::with('category')
+            ->where('products.id', $productId)
+            ->get();
+        $response = [
+            'status' => 'success',
+            'message' => 'Successfully ProductByCategory',
+            'data' => $product,
+        ];
+        return response()->json($response, Response::HTTP_OK);
+    }
+
+    public function productByCategoryIdAndProductId($categoryId, $productId)
+    {
+        $category = Product::with(['category' => function ($q) use ($categoryId) {
+            // Query the name field in status table
+            $q->where('categories.id', '=', $categoryId); // '=' is optional
+
+        }])->where('products.id', $productId)->get();
+
+        $response = [
+            'status' => 'success',
+            'message' => 'Successfully ProductByCategoryIdAndProductId',
+            'data' => $category,
         ];
         return response()->json($response, Response::HTTP_OK);
     }
