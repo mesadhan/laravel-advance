@@ -36,6 +36,9 @@ Route::group(['namespace' => 'products', 'prefix' => 'products',], function (){
 
     Route::group(['prefix' => 'product',], function (){
 
+        Route::get('/categoryWiseProducts', 'ProductController@categoryWiseProducts');
+        Route::get('/productWiseCategory', 'ProductController@productWiseCategory');
+
         Route::get('/', 'ProductController@index');
         Route::post('/', 'ProductController@store');
         Route::get('/{id}', 'ProductController@show');

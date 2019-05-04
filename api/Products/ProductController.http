@@ -40,4 +40,16 @@ Content-Type: application/json
 
 ###
 
+### categoryWiseProducts request
+GET http://localhost:8000/api/products/product/categoryWiseProducts
+Content-Type: application/json
+
+###
+
+### productWiseCategories request
+GET http://localhost:8000/api/products/product/productWiseCategory
+Content-Type: application/json
+
+###
+
 

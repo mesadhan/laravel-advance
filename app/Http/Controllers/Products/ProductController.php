@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Products;
 
 use App\Http\Controllers\Controller;
+use App\Http\Models\Products\Category;
 use App\Http\Models\Products\Product;
 use Faker\Factory;
 use Illuminate\Http\Request;
@@ -98,6 +99,28 @@ class ProductController extends Controller
         $response = [
             'status' => 'success',
             'message' => 'Successfully deleted',
+            'data' => $product,
+        ];
+        return response()->json($response, Response::HTTP_OK);
+    }
+
+    public function categoryWiseProducts()
+    {
+        $product = Category::with('products')->get();
+        $response = [
+            'status' => 'success',
+            'message' => 'Successfully CategoryWiseProducts',
+            'data' => $product,
+        ];
+        return response()->json($response, Response::HTTP_OK);
+    }
+
+    public function productWiseCategory()
+    {
+        $product = Product::with('category')->get();
+        $response = [
+            'status' => 'success',
+            'message' => 'Successfully productWiseCategory',
             'data' => $product,
         ];
         return response()->json($response, Response::HTTP_OK);
