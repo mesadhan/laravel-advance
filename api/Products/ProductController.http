@@ -1,6 +1,43 @@
-
 ### index request
 GET http://localhost:8000/api/products/product
 Content-Type: application/json
 
+
+### store request
+POST http://localhost:8000/api/products/product
+Content-Type: application/json
+
+{
+  "name": "Pen",
+  "title": "Good Pen",
+  "price":  "15",
+  "category_id":  "1",
+  "description": "Good Per Smooth for writing",
+  "status":  "1"
+}
+
+### show request
+GET http://localhost:8000/api/products/product/8
+Content-Type: application/json
+
+
+### update request
+PUT http://localhost:8000/api/products/product/8
+Content-Type: application/json
+
+{
+  "name": "Pen - Updated",
+  "title": "Good Pen-Updated",
+  "price":  "20",
+  "category_id":  "1",
+  "description": "Good Per Smooth for writing",
+  "status":  "1"
+}
+
+### delete request
+DELETE http://localhost:8000/api/products/product/8
+Content-Type: application/json
+
 ###
+
+
