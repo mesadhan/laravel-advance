@@ -1,6 +1,38 @@
-
 ### index request
-GET http://localhost:8000/api/products/product
+GET http://localhost:8000/api/products/category
+Content-Type: application/json
+
+
+### store request
+POST http://localhost:8000/api/products/category
+Content-Type: application/json
+
+{
+  "name": "pen",
+  "title": "Reasonable Price",
+  "photo":  "default_image.jpg",
+  "status":  "1"
+}
+
+### show request
+GET http://localhost:8000/api/products/category/1
+Content-Type: application/json
+
+
+### update request
+PUT http://localhost:8000/api/products/category/1
+Content-Type: application/json
+
+{
+  "name": "Pen - Updated",
+  "title": "Reasonable Pen-Updated",
+  "photo":  "1",
+  "status":  "1"
+}
+
+
+### delete request
+DELETE http://localhost:8000/api/products/category/1
 Content-Type: application/json
 
 

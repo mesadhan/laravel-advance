@@ -15,31 +15,67 @@ class CategoryController extends Controller
 
     public function index()
     {
-        return response()->json('Hello!. From CategoryController', Response::HTTP_OK);
+        $category = Category::all();
+        $response = [
+            'status' => 'success',
+            'message' => 'Successfully Data Fetch',
+            'data' => $category,
+        ];
+        return response()->json($response, Response::HTTP_OK);
     }
 
 
     public function store(Request $request)
     {
-        //
+        $category = Category::create($request->all());
+        $response = [
+            'status' => 'success',
+            'message' => 'Successfully Data Store',
+            'data' => $category,
+        ];
+        return response()->json($response, Response::HTTP_CREATED);
     }
 
 
     public function show($id)
     {
-        //
+        $category = Category::where('id', $id)->get();
+        $response = [
+            'status' => 'success',
+            'message' => 'Successfully Show',
+            'data' => $category,
+        ];
+        return response()->json($response, Response::HTTP_OK);
     }
 
 
     public function update(Request $request, $id)
     {
-        //
+        $category = Category::where('id', $id)->update([
+            'name' => $request['name'],
+            'title' => $request['title'],
+            'photo' => $request['photo'],
+            'status' => $request['status'],
+        ]);
+        $response = [
+            'status' => 'success',
+            'message' => 'Successfully Updated',
+            'data' => $category,
+        ];
+        return response()->json($response, Response::HTTP_OK);
     }
 
 
     public function delete($id)
     {
-        //
+        $category = Category::where('id', $id)->delete();
+        $response = [
+            'status' => 'success',
+            'message' => 'Successfully Deleted',
+            'data' => $category,
+        ];
+
+        return response()->json($response, Response::HTTP_OK);
     }
 
 
