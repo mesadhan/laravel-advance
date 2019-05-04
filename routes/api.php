@@ -13,13 +13,36 @@ use Illuminate\Http\Request;
 |
 */
 
-Route::middleware('auth:api')->get('/user', function (Request $request) {
+
+//--------------------------------------------------------------- simplified-auth routes
+Route::group(['namespace' => 'Auth'], function (){
+    //Route::post('login', [ 'as' => 'login', 'uses' => 'LoginController@login']);
+    Route::post('/login', 'LoginController@login')->name('login');
+    Route::get('/login', 'LoginController@show');
+
+    Route::post('/register', 'RegisterController@register');
+    Route::post('/logout', 'LoginController@logout');
+});
+
+/*Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
+});*/
+
+Route::group(['middleware' => 'auth:api'], function (){
+    Route::get('getResources', function (){
+        return 'Your Resources is secure. You must need to provide token to access it';
+    });
+
+    Route::get('/user', function (Request $request){
+        return $request->user();
+    });
 });
 
 
 
-Route::group(['namespace' => 'products', 'prefix' => 'products',], function (){
+
+//--------------------------------------------------------------- Basic Operations with test coverages
+Route::group(['namespace' => 'Products', 'prefix' => 'products',], function (){
 
     Route::group(['prefix' => 'stock',], function (){
 
@@ -32,7 +55,6 @@ Route::group(['namespace' => 'products', 'prefix' => 'products',], function (){
         Route::get('/get-db-info', 'StockController@getDBInfo');
         Route::get('/accept-by-id/{id}', 'StockController@acceptById');
     });
-
 
     Route::group(['prefix' => 'product',], function (){
 
@@ -65,6 +87,6 @@ Route::group(['namespace' => 'products', 'prefix' => 'products',], function (){
 
 
 
-
+//--------------------------------------------------------------- References
 // https://laravel.com/docs/5.8/routing
 // https://laravel.com/docs/5.8/controllers
