@@ -34,14 +34,35 @@ Route::group(['namespace' => 'products', 'prefix' => 'products',], function (){
     });
 
 
-});
-
-Route::group(['namespace' => 'products', 'prefix' => 'products',], function () {
-
     Route::group(['prefix' => 'product',], function (){
+
+        Route::get('/productWiseCategory', 'ProductController@productWiseCategory');
+        Route::get('/productByCategory/{id}', 'ProductController@productByCategory');
+        Route::get('/productByCategoryIdAndProductId/{cid}/{pid}', 'ProductController@productByCategoryIdAndProductId');
+
         Route::get('/', 'ProductController@index');
+        Route::post('/', 'ProductController@store');
+        Route::get('/{id}', 'ProductController@show');
+        Route::put('/{id}', 'ProductController@update');
+        Route::delete('/{id}', 'ProductController@delete');
     });
+
+    Route::group(['prefix' => 'category',], function (){
+
+        Route::get('/categoryWiseProducts', 'CategoryController@categoryWiseProducts');
+        Route::get('/categoryByProducts/{id}', 'CategoryController@categoryByProducts');
+        Route::get('/categoryByCategoryIdAndProductId/{cid}/{pid}', 'CategoryController@categoryByCategoryIdAndProductId');
+
+        Route::get('/', 'CategoryController@index');
+        Route::post('/', 'CategoryController@store');
+        Route::get('/{id}', 'CategoryController@show');
+        Route::put('/{id}', 'CategoryController@update');
+        Route::delete('/{id}', 'CategoryController@delete');
+    });
+
 });
+
+
 
 
 

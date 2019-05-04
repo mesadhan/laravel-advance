@@ -28,8 +28,12 @@ class StockController extends Controller
     public function store(Request $request)
     {
         $stock = Stock::create($request->all());
-
-        return response()->json($stock, Response::HTTP_CREATED);
+        $response = [
+            'status' => 'success',
+            'message' => 'Successfully Data Store',
+            'data' => $stock,
+        ];
+        return response()->json($response, Response::HTTP_CREATED);
     }
 
     public function show($id)

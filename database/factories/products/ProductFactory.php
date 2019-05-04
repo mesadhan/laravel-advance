@@ -11,7 +11,7 @@ use Illuminate\Support\Facades\Config;
 $factory->define(Product::class, function (Faker $faker) {
 
     $imagePath = public_path(Config::get('assets.images'));
-    $image_name = $faker->image($imagePath, 400, 200, false);
+    $image_name = $faker->image($imagePath, 200, 200, false);
 
     return [
         'name' => $faker->name,
