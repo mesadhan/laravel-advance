@@ -1,13 +1,15 @@
 language: php
 
 php:
-  - '7.1.3'
+  - 7.1.3
 
+install:
+  - export PATH="$HOME/.composer/vendor/bin:$PATH"
 
 before_script:
   - cp .env.testing .env
   - composer self-update
-  - composer install --prefer-source --no-interaction
+  - composer install --no-interaction
   - php artisan key:generate
 
 script:
