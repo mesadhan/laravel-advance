@@ -11,7 +11,6 @@ env:
     - setup=basic
     - APP_ENV=local
     - APP_DEBUG=true
-    - APP_KEY=base64:y5wiptNw0FlpxOjy7iFmOqu+cfy+ytY+CAKmFKKb8+U=
     - DB_CONNECTION=sqlite
     - CACHE_DRIVER=file
     - SESSION_DRIVER=file
@@ -34,6 +33,7 @@ before_script:
 #  - chmod a+x ./vendor/laravel/dusk/bin/chromedriver-linux
 #  - ./vendor/laravel/dusk/bin/chromedriver-linux &
   - cp .env.testing .env
+  - php artisan key:generate
   - php artisan serve > /dev/null 2>&1 &
 
 script:
