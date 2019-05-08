@@ -60,6 +60,7 @@
 > User DB Seed with mock data, seeder file must create using command
 
     php artisan make:seeder products/StockTableSeeder
+    php artisan db:seed --class=StockTableSeeder
     php artisan db:seed
 
 
