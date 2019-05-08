@@ -64,6 +64,10 @@
     php artisan db:seed
 
 
+`Note`: Once you have written your seeder, you may need to regenerate Composer's autoloader using the dump-autoload command:
+     
+     composer dump-autoload
+
 
 ## RUN phpunit Test using command lines
     

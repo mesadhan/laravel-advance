@@ -1,15 +1,17 @@
 <?php
 
+namespace App\Http\Controllers;
 
-use App\Http\Controllers\Controller;
+use App\Http\Models\Person;
 use Illuminate\Http\Request;
 
 class PersonController extends Controller
 {
-
     public function index()
     {
-        //
+        $results = Person::all();
+        return view('person')
+            ->with('results', $results);
     }
 
     public function store(Request $request)
