@@ -11,6 +11,19 @@
 |
 */
 
+Route::get('/redis', function () {
+   // print_r( app()->make('redis'));
+    $redis = app()->make('redis');
+    $redis->set('key1', 'Sadhan Sarker');
+
+    return $redis->get('key1');
+
+
+});
+
+
+
+
 Route::get('/welcome', function () {
     return view('welcome');
 });

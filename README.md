@@ -125,3 +125,10 @@ https://www.youtube.com/watch?v=EPL9sM3nH6w
 
 <a href="{{ route('actBook', $room->id, serialize($array)) }}" class="btn btn-default">About</a>
 
+
+
+
+# install redis
+
+composer require predis/predis
+
