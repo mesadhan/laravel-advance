@@ -2,9 +2,11 @@
 
 namespace App\Http\Models\Products;
 
+use App\Http\Controllers\Products\IProductController;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Http\Request;
 
-class Product extends Model
+class Product extends Model implements IProductController
 {
     protected $fillable = [
         'name',
@@ -27,4 +29,8 @@ class Product extends Model
 
     public $timestamps = true;
 
+    public function customProduct()
+    {
+        return $this->get();
+    }
 }

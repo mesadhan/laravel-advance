@@ -13,6 +13,11 @@ use Illuminate\Support\Facades\File;
 
 class ProductController extends Controller
 {
+    protected $products;
+    public function __construct(Product $products)
+    {
+        $this->products = $products;
+    }
 
     public function index()
     {
@@ -23,6 +28,11 @@ class ProductController extends Controller
             'data' => $product,
         ];
         return response()->json($response, Response::HTTP_OK);
+    }
+
+    public function customProduct(){
+
+        return $this->products->customProduct();
     }
 
 

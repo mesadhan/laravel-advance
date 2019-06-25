@@ -58,6 +58,8 @@ Route::group(['namespace' => 'Products', 'prefix' => 'products',], function (){
 
     Route::group(['prefix' => 'product',], function (){
 
+        Route::get('/customProduct', 'ProductController@customProduct');
+
         Route::get('/productWiseCategory', 'ProductController@productWiseCategory');
         Route::get('/productByCategory/{id}', 'ProductController@productByCategory');
         Route::get('/productByCategoryIdAndProductId/{cid}/{pid}', 'ProductController@productByCategoryIdAndProductId');

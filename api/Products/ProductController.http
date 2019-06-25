@@ -2,6 +2,10 @@
 GET http://localhost:8000/api/products/product
 Content-Type: application/json
 
+### index request
+GET http://localhost:8000/api/products/product/customProduct
+Content-Type: application/json
+
 
 ### store request
 POST http://localhost:8000/api/products/product
