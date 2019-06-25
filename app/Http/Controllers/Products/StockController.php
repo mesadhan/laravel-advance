@@ -14,6 +14,18 @@ class StockController extends Controller
 
     public $response = [];
 
+
+    public $stocks;
+    // dependency injection
+    public function __construct(Stock $stocks)
+    {
+        $this->stocks = $stocks;
+    }
+
+    public function customStock(){
+        return $this->stocks->customStock();
+    }
+
     public function index()
     {
         $stock = Stock::all();

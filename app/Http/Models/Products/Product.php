@@ -5,6 +5,7 @@ namespace App\Http\Models\Products;
 use App\Http\Controllers\Products\IProductController;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Http\Request;
+use Illuminate\Http\Response;
 
 class Product extends Model implements IProductController
 {
@@ -31,6 +32,13 @@ class Product extends Model implements IProductController
 
     public function customProduct()
     {
-        return $this->get();
+        $response = [
+            'status' => 'success',
+            'message' => 'Maintain Custom Product From Here',
+            'data' => $this->get()
+        ];
+        return response()->json($response, Response::HTTP_OK);
+
     }
+
 }

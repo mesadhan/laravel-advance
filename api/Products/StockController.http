@@ -1,4 +1,8 @@
 ### index request
+GET http://localhost:8000/api/products/stock/customStock
+Content-Type: application/json
+
+### index request
 GET http://localhost:8000/api/products/stock
 Content-Type: application/json
 

@@ -46,6 +46,9 @@ Route::group(['namespace' => 'Products', 'prefix' => 'products',], function (){
 
     Route::group(['prefix' => 'stock',], function (){
 
+
+        Route::get('/customStock', 'StockController@customStock');
+
         Route::get('/', 'StockController@index');
         Route::post('/', 'StockController@store');
         Route::get('/{id}', 'StockController@show');

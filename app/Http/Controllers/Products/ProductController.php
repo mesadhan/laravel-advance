@@ -14,9 +14,14 @@ use Illuminate\Support\Facades\File;
 class ProductController extends Controller
 {
     protected $products;
+    // dependency injection
     public function __construct(Product $products)
     {
         $this->products = $products;
+    }
+
+    public function customProduct(){
+        return $this->products->customProduct();
     }
 
     public function index()
@@ -30,10 +35,6 @@ class ProductController extends Controller
         return response()->json($response, Response::HTTP_OK);
     }
 
-    public function customProduct(){
-
-        return $this->products->customProduct();
-    }
 
 
     public function store(Request $request)
