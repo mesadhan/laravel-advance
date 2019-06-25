@@ -2,11 +2,11 @@
 
 namespace App\Http\Models\RedisBlog;
 
-use App\Http\Controllers\RedisBlog\IBlogController;
+use App\Http\Controllers\RedisBlog\IPostController;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Http\Response;
 
-class Post extends Model implements IBlogController
+class Post extends Model implements IPostController
 {
     //
     protected $fillable = [

@@ -90,6 +90,16 @@ Route::group(['namespace' => 'Products', 'prefix' => 'products',], function (){
 });
 
 
+Route::group(['namespace' => 'RedisBlog', 'prefix' => 'blog',], function (){
+
+    Route::group(['prefix' => 'post',], function () {
+
+        Route::get('/posts', 'PostController@posts');
+    });
+
+
+});
+
 
 
 //--------------------------------------------------------------- References

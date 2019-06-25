@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers\Products;
+namespace App\Http\Controllers\RedisBlog;
 
 use App\Http\Controllers\Controller;
 use App\Http\Models\RedisBlog\Post;
@@ -9,7 +9,7 @@ use Illuminate\Http\Request;
 use Illuminate\Http\Response;
 use Illuminate\Support\Facades\Log;
 
-class BlogController extends Controller
+class PostController extends Controller
 {
 
     public $response = [];
@@ -22,8 +22,7 @@ class BlogController extends Controller
         $this->posts = $posts;
     }
 
-    public function posts(){
-
+    public function posts() {
         return $this->posts->customPost();
     }
 

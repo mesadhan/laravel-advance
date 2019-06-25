@@ -4,7 +4,7 @@ namespace App\Http\Controllers\RedisBlog;
 
 use Illuminate\Http\Request;
 
-interface IBlogController
+interface IPostController
 {
 
     public function customPost();

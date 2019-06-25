@@ -1,0 +1,5 @@
+### index request
+GET http://localhost:8000/api/blog/post/posts
+Content-Type: application/json
+
+###
