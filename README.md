@@ -1,3 +1,12 @@
+# What I Learned
+
+- Learn How accutally test driven development work.
+- Imporve Confident with TDD Culture.
+- Learn how Karma, Protractor and Jesmine Work in Angular.
+- Learn how third-party library and dependency work in Laravel.
+- Learn Basic, Auth, Caching, PHPUnit, HTTP TEST, ORM, Controller, Model, Route, Mocking, Reflection etc
+- Learn Reactive Programming.
+- Learn Mocking concept.
 
 # PhpStorm Test Environment Setup
 
